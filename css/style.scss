@@ -1,0 +1,530 @@
+$mainColor: rgb(247, 96, 14);
+
+/* stert our framework */
+*{box-sizing: border-box}
+body{font-family: 'Open Sans', sans-serif;}
+.container{margin: auto;position: relative;padding: 0 15px;width: 100%}
+.table{height: 100%;display: table}
+.text-center{text-align: center}
+.upper{text-transform: uppercase}
+.main-color{color: $mainColor}
+.main-background{background-color: $mainColor}
+.clearfix{clear: both;}
+.fl-left{float: left;}
+.fl-right{float: right}
+.overlay{background-color: rgba(48, 53, 60, .8);width: 100%;height: 100%;}
+.heidden{display: none}
+.main-h{font-weight: normal;font-size: 35px;margin: 0}
+.main-p{font-size: 16px;line-height: 2;margin: 30px 0 100px}
+input::placeholder,
+textarea::placeholder
+{color: #868181;font-size: 16px;text-transform: capitalize}
+.fa-times
+{
+    @extend .transition;
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+}
+.fa-times:hover{color: $mainColor}
+@media ( min-width: 768px ) {
+    .container{width: 750px }
+}
+@media ( min-width: 992px ) {
+    .container{width: 970px }
+}
+@media ( min-width: 1200px ) {
+    .container{width: 1170px }
+}
+/* end our framework */
+/* stert header */
+.header
+{
+    background-image: url(../image/pexels-photo-210643.jpeg);
+    background-size: cover;
+    color: #fff;
+    /* stert navbar */
+    .nav
+    {
+        overflow: hidden;
+        padding: 20px 0;
+        width: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        span:first-child{font-size: 20px}
+        .links{
+            cursor: pointer;transition: all .3s ease-in-out;
+            i{margin-left: 5px;}
+            &:hover{color: $mainColor}
+        }
+        .menu-box{
+            background-color: rgba(48, 53, 60, .8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999999;
+            .fa-times{top: 10px;right: 120px;}
+            ul{
+                list-style: none;margin-top: 50px;
+                li
+                {
+                    @extend .transition;
+                    font-size: 30px;
+                    margin: 15px 0;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                    &:hover{color: $mainColor}
+                }
+            }
+            .active{color: $mainColor}
+            hr
+            {
+                margin: 40px auto;
+                height: 2px;
+                position: relative;
+                width: 160px;
+                left: 20px;
+                background-color: $mainColor;
+                border: 0;
+            }
+            .social-icon{
+                position: relative;left: 20px;
+                i
+                {
+                    @extend .transition;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    color: #fff;
+                    background-color: #4267B2;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    cursor: pointer;
+                }
+                i:not(:last-child){margin-right: 5px}
+                .fa-twitter{background-color: #1DA1F2}
+                .fa-google-plus-g{background-color: #DB4437}
+                .fa-dribbble{background-color: #ea4c89}
+                .fa-behance{background-color: #131418}
+            }
+        }
+        
+    }
+    /* end navbar */
+}
+
+.header .table-row{display: table-row;}
+.header .intro h1{margin: 0;font-size: 70px;font-weight: 800}
+.header .intro p{font-size: 25px;color: #ebeff1;line-height: 1.8}
+.header .buttons button
+{
+    @extend .transition;
+    background: transparent;
+    color: #fff;
+    padding: 10px 0px;
+    width: 180px;
+    border: 1px solid #868181;
+    margin: 0 10px;
+    margin-top: 30px;
+    font-size: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.header .arrow
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    padding: 50px 0
+}
+.header .arrow i
+{
+    @extend .transition;
+    border: 2px solid #868181;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    cursor: pointer;
+    font-size: 20px
+}
+.header .buttons button:hover{background-color: $mainColor;border: 1px solid $mainColor;}
+.header .arrow i:hover{color: $mainColor;}
+@media ( max-width: 450px ) {
+    .header .arrow{padding: 20px}  
+}
+@media ( max-width: 767px ) {
+    .header .intro h1{font-size: 40px}
+    .header .intro p{font-size: 16px;}
+}@media ( min-width: 768px ) and (max-width: 1200px){
+    .header .intro h1{font-size: 60px}
+    .header .intro p{font-size: 20px;}
+}
+
+/* end header */
+/* stert features */
+.features{padding: 100px 0;overflow: hidden;}
+.features .box{width: 23.5%;}
+.features .box:not(:nth-child(4)){margin-right: 2%}
+.features .box i
+{
+    @extend .transition;
+    color: $mainColor;
+    border: 2px solid #c7c9cc;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+}
+.features .box h3{color: #3b434c;font-weight: normal;}
+.features .box p
+{
+    color: #3b434c;
+    font-size: 14px;
+    padding: 0 50px;
+    line-height: 1.7
+}
+.features .box:hover i{background-color: $mainColor;color: #fff;border: 2px solid $mainColor}
+@media ( max-width: 767px ){
+    .features .box{width: 100%;margin-bottom: 20px}
+}
+@media ( min-width: 768px ) and (max-width: 1199px) {
+    .features .box{width: 47%;margin-bottom: 20px;margin-right: 1%}
+}
+
+/* end features */
+/* stert subscribe */
+.subscribe{background-image: url(../image/02.jpeg);background-size: cover;}
+.subscribe .overlay{padding: 100px 0}
+.subscribe form{margin: 0px auto;width: 80%}
+.subscribe input, .subscribe button
+{
+    background-color: $mainColor;
+    color: #fff;
+    margin: 0 1%;
+    padding: 0 10px; 
+    width: 163px;
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    outline: none;
+}
+.subscribe input:first-child{width: 70%;background-color: #fff;color: #868181;}
+.subscribe button{cursor: pointer;}
+@media ( max-width: 767px ){
+    .subscribe .overlay{padding-bottom: 80px}
+    .subscribe form{width: 100%}
+    .subscribe input:first-child{width: 100%;margin-bottom: 20px}
+    .subscribe button{width: 100%;display: block}
+}
+@media ( min-width: 768px ) {
+    .subscribe input:first-child{width: 66%}
+}
+/* end subscribe */
+/* stert our works */
+.our-work{padding: 100px 0;color: #3b434c;z-index: 999}
+.our-work .our-iteam .iteam
+{
+    width: 31.33333%;
+    margin: 1%;
+    height: 375px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    box-shadow: 15px 15px 15px #e0d7d7;
+    overflow: hidden;
+}
+.our-work .our-iteam .iteam img{width: 100%;height: 100%}
+.our-work .our-iteam .overlay
+{
+    background-color: rgba(247, 96, 14, .8);
+    padding: 90px 0;
+    position: absolute;
+    top: 376px;
+    transition: all .7s linear
+}
+.our-work .our-iteam .overlay h3
+{
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: normal;
+}
+.our-work .our-iteam .overlay p{margin: 0;margin-bottom: 50px;font-size: 14px}
+.our-work .our-iteam .overlay button
+{
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    margin: 0;
+    transition: all .3s ease-in-out
+}
+.our-work .fa-times{top: -40px;right: -40px;}
+.our-work button
+{
+    background: transparent;
+    border: 2px solid #d8d9db;
+    padding: 20px 50px;
+    border-radius: 10px;
+    margin-top: 100px;
+    color: #3b434c;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s ease-in-out
+}
+.our-work .show-more{box-shadow:4px 5px 5px #e9ebefba inset;}
+.our-work .our-iteam .iteam:hover .overlay{top: 0}
+.our-work .our-iteam .iteam button:hover  {background-color: #fff;color: $mainColor}
+.our-work .show-more:hover
+{
+    background-color: $mainColor;
+    color: #fff;
+    border: 2px solid $mainColor;
+    box-shadow: none
+}
+@media ( max-width: 767px ){
+    .main-p{font-size: 16px}
+    .our-work .our-iteam .iteam{width: 100%;float: none;margin-bottom: 20px;box-shadow: 5px 15px 15px #e0d7d7}
+    .our-work .fa-times {
+        top: -50px;
+        right: 10px;
+    }
+}
+@media ( min-width: 768px ) and (max-width: 1200px) {
+    .our-work .our-iteam .iteam{width: 48%;}
+    .our-work .fa-times {
+        top: -50px;
+        right: 0px;
+    }
+}
+/* end our works */
+/* stert what clients say */
+.testim
+{
+    background-image: url(../image/3.jpg);
+    background-size: cover;
+    background-position: 0% 117%;
+    background-repeat: no-repeat;
+}
+.testim .overlay{position: static}
+.testim .client{padding: 100px 0;font-size: 18px;color: $mainColor;}
+.testim .client p{font-size: 25px;font-style: italic;line-height: 2;color: #fff}
+.testim .fa-chevron-right,
+.testim .fa-chevron-left
+{position: absolute;top: 50%;color: #868181;cursor: pointer;}
+.testim .fa-chevron-right{right: 0}
+.testim .fa-chevron-left{left: 0}
+.testim .fa-chevron-right:hover,
+.testim .fa-chevron-left:hover{color: $mainColor}
+@media ( max-width: 767px ){
+    .testim .client{font-size: 14px}
+    .testim .client p{font-size: 16px;padding: 0 20px}
+}
+@media ( min-width: 768px ) and (max-width: 991px) {
+    .testim .client{font-size: 16px}
+    .testim .client p{font-size: 18px;padding: 0 20px}
+}
+/* end what clients say */
+/* stert our team */
+.our-team{padding: 100px 0;color: #3b434c}
+.our-team h2{font-weight: normal;font-size: 35px;margin: 0}
+.our-team .main{font-size: 16px;line-height: 2;margin: 30px 0 100px}
+.our-team .person{width: 24%;color: #9da1a5}
+.our-team .person:not(:first-child){margin-left: 1%}
+.our-team .person img
+{
+    @extend .transition;
+    width: 260px;
+    height: 290px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    border: 4px solid transparent;
+    transform-origin: bottom
+
+}
+.our-team .person .social-icons i
+{
+    @extend .transition;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 15px;
+    color: #fff;
+    background-color: #9da1a5;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+.our-team .person:hover{color: #3b434c}
+.our-team .person:hover img{filter:none ; -webkit-filter:none ;}
+.our-team .person:hover img
+{
+    border-bottom: 4px solid $mainColor;
+    transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+    transform-origin: bottom;
+}
+.our-team .person:hover .fa-facebook-f{background-color: #4267B2}
+.our-team .person:hover .fa-twitter{background-color: #1DA1F2}
+.our-team .person:hover .fa-google-plus-g{background-color: #DB4437}
+@media ( max-width: 767px ){
+    .our-team .person{width: 100%;float: none;margin-bottom: 50px}
+}
+@media ( min-width: 768px ) and (max-width: 1200px) {
+    .our-team .person{width: 48%;margin-bottom: 50px}
+}
+/* end our team */
+/* stert contact me */
+.contact
+{
+    background-image: url(../image/city-937541.jpg);
+    background-size: cover !important;
+    color: #fff;
+    background-position: -60px !important;
+}
+.contact .overlay{padding: 100px 0}
+.contact form{overflow: hidden;margin: 0 auto;width: 70%}
+.contact input[type="email"],
+.contact input[type="text"]
+{
+    width: 47.5%;
+    padding: 0 20px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: none;
+    outline: none;
+    color: #3b434c
+}
+.contact textarea
+{
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    outline: none;
+    resize: none;
+    color: #3b434c;
+}
+.contact .info{margin: 30px auto;width: 70%}
+.contact .fa-times{top: -50px;right: 100px;}
+.contact button
+{
+    width: 200px;
+    height: 50px;
+    background-color: $mainColor;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+.contact .social-icon i
+{
+    @extend .transition;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    background-color: #4267B2;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+.contact .social-icon i:not(:last-child){margin-right: 5px}
+.contact .social-icon .fa-twitter{background-color: #1DA1F2}
+.contact .social-icon .fa-google-plus-g{background-color: #DB4437}
+.contact .social-icon .fa-dribbble{background-color: #ea4c89}
+.contact .social-icon .fa-behance{background-color: #131418}
+@media ( max-width: 767px ){
+    .contact input[type="email"],
+    .contact input[type="text"]
+    {width: 100%;float: none;margin-bottom: 20px}
+    .contact textarea{margin: 0}
+    .contact form{width: 100%}
+    .contact .info{width: 100%}
+    .contact button{width: 100%;margin-bottom: 20px}
+    .contact .social-icon{width: 100%}
+    .contact .fa-times {
+        top: -50px !important;
+        right: 15px !important;
+    }
+}
+/* end contact me */
+/* stert footer */
+.footer{padding: 30px 0;background-color: #3b434c;color: #fff;font-weight: 400;overflow: hidden;}
+.footer strong{font-weight: 510}
+.footer strong span{color: #f00;font-size: 20px;margin: 1px}
+@media ( max-width: 767px ){
+    .footer p{
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+        display: inline-block
+    }
+}
+/* end footer */
+// start extend
+.transition
+{
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+// end extend
